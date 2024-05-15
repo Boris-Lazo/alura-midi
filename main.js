@@ -1,20 +1,30 @@
-let contador = 0
-
 function playSonido (idElementoAudio){
     document.querySelector(idElementoAudio).play();
 }
 
 const listaDeTeclas = document.querySelectorAll('.tecla');
 
-while (contador < 9)[
-    listaDeTeclas[contador].onclick = playSonido,
-    contador = contador + 1,
-    console.log(contador),
-]
+for(let contador = 0;contador < listaDeTeclas.length;contador++){
 
-/* function playSonidoPom (){
-    document.querySelector('#sonido_tecla_pom').play;
+    const tecla = listaDeTeclas[contador];
+    const instrumento = tecla.classList[1];
+
+    const idAudio = `#sonido_${instrumento}`;
+
+    tecla.onclick = function (){
+        playSonido(idAudio);
+    };
+       
 }
 
-document.querySelector('.tecla_pom').onclick = playSonidoPom; //La función debe ser llamada sin los parentesis para que no se ejecute automaticamente.
- */
+/* //Sonido POM
+function playSonidoPom (){
+    document.querySelector('#sonido_tecla_pom').play;
+}
+document.querySelector('.tecla_pom').onclick = playSonidoPom; // Aquí se llama la función, pero sin los parentesis, porque sino el navegador nos lanzará un error ya que se ejecutaría automaticamente.
+
+//Sonido Clap
+function playSonidoClap() {
+    document.querySelector('#sonido_tecla_clap').play()
+}
+document.querySelector('.tecla_clap').onclick = playSonidoClap; */
