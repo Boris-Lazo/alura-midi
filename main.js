@@ -14,7 +14,28 @@ for(let contador = 0;contador < listaDeTeclas.length;contador++){
     tecla.onclick = function (){
         playSonido(idAudio);
     };
-       
+    
+    tecla.onkeydown = function(event) {
+        if (event.code === 'Space' || event.code === 'Enter'){
+            tecla.classList.add('activa');
+        }
+    }
+    tecla.onkeyup = function(){
+        tecla.classList.remove('activa');
+    }
+
+    // //Codigo dado por Gemini
+    // tecla.onkeydown = function(event) {
+    //     if (event.keyCode === 13) { // Check if Enter key is pressed
+    //         tecla.classList.add('activa'); // Activate the key
+    //         playSonido(idAudio); // Play the sound
+    
+    //         // Add a timeout to deactivate the key after a short delay
+    //         setTimeout(function() {
+    //             tecla.classList.remove('activa'); // Deactivate the key
+    //         }, 100); // Adjust the timeout value as needed
+    //     }
+    // };    
 }
 
 /* //Sonido POM
